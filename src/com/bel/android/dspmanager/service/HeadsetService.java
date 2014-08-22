@@ -346,11 +346,6 @@ public class HeadsetService extends Service {
         EffectSet.setParameter(session.mCompression, 0,
                 Short.valueOf(preferences.getString("dsp.compression.mode", "0")));
 
-        session.mBassBoost.setEnabled(preferences.getBoolean("dsp.bass.enable", false));
-        session.mBassBoost.setStrength(Short.valueOf(preferences.getString("dsp.bass.mode", "0")));
-        session.mBassBoost.setCenterFrequency(
-                Short.valueOf(preferences.getString("dsp.bass.freq", "55")));
-
         /* Equalizer state is in a single string preference with all values separated by ; */
         session.mEqualizer.setEnabled(preferences.getBoolean("dsp.tone.enable", false));
         if (mOverriddenEqualizerLevels != null) {
